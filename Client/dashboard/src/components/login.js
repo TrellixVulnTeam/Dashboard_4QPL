@@ -2,7 +2,26 @@ import react, { Component } from "react";
 import "./login.css";
 
 class login extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = { mail: "", password: "" };
+
+    this.handleMail = this.handleMail.bind(this);
+    this.handlePassword = this.handlePassword.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleMail(event) {
+    this.setState({ mail: event.target.value });
+  }
+
+  handlePassword(event) {
+    this.setState({ password: event.target.value });
+  }
+
+  handleClick(event) {
+    console.log(this.state.mail + "||" + this.state.password);
+  }
   render() {
     return (
       <div className="box row">
@@ -15,6 +34,8 @@ class login extends Component {
             className="email"
             id="email"
             placeholder="Email"
+            value={this.state.mail}
+            onChange={this.handleMail}
           />
           <br></br>
           <input
@@ -22,11 +43,15 @@ class login extends Component {
             className="password"
             id="password"
             placeholder="Password"
+            value={this.state.password}
+            onChange={this.handlePassword}
           />
 
           <p className="text-center">Forgot Your Password ?</p>
           <div className="text-center">
-            <button className="btn-login">Login</button>
+            <button className="btn-login" onClick={this.handleClick}>
+              Login
+            </button>
           </div>
         </div>
         <div className="col-md-6 form-pic"></div>
