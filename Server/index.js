@@ -3,12 +3,14 @@ const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const SignupModel = require("./Models/singup.js");
-
+const bodyParser = require("body-parser");
 app.use(
   cors({
-    origin: "http://localhost:3001",
+    origin: "http://localhost:3000",
   })
 );
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(express.json());
 
 //DB Connection
@@ -19,7 +21,7 @@ mongoose.connect(
   }
 );
 
-app.get("/add", async (req, res) => {
+app.post("/add", async (req, res) => {
   const mail = req.body.mail;
   const password = req.body.password;
 
