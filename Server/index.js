@@ -1,7 +1,15 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const cors = require("cors");
 const SignupModel = require("./Models/singup.js");
+
+app.use(
+  cors({
+    origin: "http://localhost:3001",
+  })
+);
+app.use(express.json());
 
 //DB Connection
 mongoose.connect(
@@ -11,14 +19,16 @@ mongoose.connect(
   }
 );
 
-app.get("/insert", async (req, res) => {
-  const singup = new SignupModel({
-    mail: "osamashamim1997@gmail.com",
-    password: "password",
-  });
+app.get("/add", async (req, res) => {
+  const mail = req.body.mail;
+  const password = req.body.password;
 
+  const singup = new SignupModel({
+    mail: mail,
+    password: password,
+  });
   await singup.save();
-  res.send("Inserted data");
+  res.send("Success");
 });
 
 app.get("/read", async (req, res) => {
