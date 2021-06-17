@@ -1,41 +1,32 @@
 import react, { Component } from "react";
 import "./login.css";
 import axios from "axios";
+import Signin from "./signin";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Registration from "./registration";
 
 class login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { mail: "", password: "" };
-
-    this.handleMail = this.handleMail.bind(this);
-    this.handlePassword = this.handlePassword.bind(this);
-    this.add = this.add.bind(this);
-  }
-
-  handleMail(event) {
-    this.setState({ mail: event.target.value });
-  }
-
-  handlePassword(event) {
-    this.setState({ password: event.target.value });
-  }
-  add(event) {
-    axios
-      .post("http://localhost:3001/add", {
-        mail: this.state.mail,
-        password: this.state.password,
-      })
-      .then(() => {
-        alert("it worked");
-      })
-      .catch(() => {
-        alert("not working");
-      });
-  }
-
   render() {
-    return <div></div>;
+    return (
+      <Router>
+        <div className="box row">
+          <div className="col-md-6">
+            <Switch>
+              <Route path="/signin">
+                <Signin />
+              </Route>
+            </Switch>
+            <Switch>
+              <Route path="/registration">
+                <Registration />
+              </Route>
+            </Switch>
+          </div>
+
+          <div className="col-md-6 form-pic"></div>
+        </div>
+      </Router>
+    );
   }
 }
-
 export default login;

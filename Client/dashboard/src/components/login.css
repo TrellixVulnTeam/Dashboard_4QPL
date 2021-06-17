@@ -24,7 +24,7 @@ body {
 }
 .email {
   padding-left: 10px;
-  margin-left: 50px;
+  margin-left: 80px;
   margin-top: 40px;
   width: 320px;
   margin-bottom: 20px;
@@ -36,7 +36,7 @@ body {
 
 .password {
   padding-left: 10px;
-  margin-left: 50px;
+  margin-left: 80px;
   margin-top: 0px;
   width: 320px;
   margin-bottom: 20px;
@@ -53,5 +53,17 @@ body {
   border-radius: 22px;
   height: 40px;
   font-weight: 600;
+  margin-top: 10px;
+  border: none;
+}
+
+.btn-register {
+  color: white;
+  background-image: linear-gradient(#ff454d, #ff426b);
+  width: 245px;
+  border-radius: 22px;
+  height: 40px;
+  font-weight: 600;
+  margin-top: 10px;
   border: none;
 }

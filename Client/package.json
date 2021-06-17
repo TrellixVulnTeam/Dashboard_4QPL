@@ -3,6 +3,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "node-sass": "^6.0.0",
-    "react-bootstrap": "^1.6.1"
+    "react-bootstrap": "^1.6.1",
+    "react-router-dom": "^5.2.0"
   }
 }
