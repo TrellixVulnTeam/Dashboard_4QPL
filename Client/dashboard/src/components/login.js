@@ -7,20 +7,14 @@ import Registration from "./registration";
 
 class login extends Component {
   render() {
+    const url = window.location.pathname;
+    console.log(url);
     return (
       <Router>
         <div className="box row">
           <div className="col-md-6">
-            <Switch>
-              <Route path="/signin">
-                <Signin />
-              </Route>
-            </Switch>
-            <Switch>
-              <Route path="/registration">
-                <Registration />
-              </Route>
-            </Switch>
+            {url == "/" && <Signin />}
+            {url == "/registration" && <Registration />}
           </div>
 
           <div className="col-md-6 form-pic"></div>

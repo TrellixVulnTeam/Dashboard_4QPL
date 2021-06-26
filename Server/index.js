@@ -15,17 +15,23 @@ app.use(express.json());
 
 //DB Connection
 mongoose.connect(
-  "mongodb://localhost:27017/Registration?readPreference=primary&appname=MongoDB%20Compass&ssl=false",
+  "mongodb://localhost:27017/register?readPreference=primary&appname=MongoDB%20Compass&ssl=false",
   {
     useNewUrlParser: true,
   }
 );
 
 app.post("/add", async (req, res) => {
+  const fname = req.body.fname;
+  const lname = req.body.lname;
+  const username = req.body.username;
   const mail = req.body.mail;
   const password = req.body.password;
 
   const singup = new SignupModel({
+    fname: fname,
+    lname: lname,
+    username: username,
     mail: mail,
     password: password,
   });

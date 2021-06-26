@@ -19,19 +19,7 @@ class Signin extends Component {
   handlePassword(event) {
     this.setState({ password: event.target.value });
   }
-  add(event) {
-    axios
-      .post("http://localhost:3001/add", {
-        mail: this.state.mail,
-        password: this.state.password,
-      })
-      .then(() => {
-        alert("it worked");
-      })
-      .catch(() => {
-        alert("not working");
-      });
-  }
+  add(event) {}
 
   render() {
     return (
@@ -41,7 +29,7 @@ class Signin extends Component {
         </h3>
         <input
           type="email"
-          className="email"
+          className="inputs"
           id="email"
           placeholder="Email"
           value={this.state.mail}
@@ -50,7 +38,7 @@ class Signin extends Component {
         <br></br>
         <input
           type="password"
-          className="password"
+          className="inputs"
           id="password"
           placeholder="Password"
           value={this.state.password}
