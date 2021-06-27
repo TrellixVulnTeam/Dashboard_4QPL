@@ -4,21 +4,17 @@ import axios from "axios";
 import Signin from "./signin";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Registration from "./registration";
-
+import Home from "./home";
 class login extends Component {
   render() {
     const url = window.location.pathname;
     console.log(url);
     return (
       <Router>
-        <div className="box row">
-          <div className="col-md-6">
-            {url == "/" && <Signin />}
-            {url == "/registration" && <Registration />}
-          </div>
+        {url == "/home" && <Home />}
 
-          <div className="col-md-6 form-pic"></div>
-        </div>
+        {url == "/" && <Signin />}
+        {url == "/registration" && <Registration />}
       </Router>
     );
   }

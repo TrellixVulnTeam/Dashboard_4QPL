@@ -24,36 +24,45 @@ class Signin extends Component {
   render() {
     return (
       <main>
-        <h3 className="heading-login">
-          <strong>Login</strong>
-        </h3>
-        <input
-          type="email"
-          className="inputs"
-          id="email"
-          placeholder="Email"
-          value={this.state.mail}
-          onChange={this.handleMail}
-        />
-        <br></br>
-        <input
-          type="password"
-          className="inputs"
-          id="password"
-          placeholder="Password"
-          value={this.state.password}
-          onChange={this.handlePassword}
-        />
+        <div className="box row">
+          <div className="col-md-6">
+            <h3 className="heading-login">
+              <strong>Login</strong>
+            </h3>
+            <input
+              type="email"
+              className="inputs"
+              id="email"
+              placeholder="Email"
+              value={this.state.mail}
+              onChange={this.handleMail}
+            />
+            <br></br>
+            <input
+              type="password"
+              className="inputs"
+              id="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.handlePassword}
+            />
 
-        <p className="text-center">Forgot Your Password ?</p>
-        <div className="text-center">
-          <button className="btn-login" onClick={this.add}>
-            Login
-          </button>
-          <br />
-          <a href="/registration">
-            <button className="btn-register">New User ? Register Now</button>
-          </a>
+            <p className="text-center">Forgot Your Password ?</p>
+            <div className="text-center">
+              <a href="/home">
+                <button className="btn-login" onClick={this.add}>
+                  Login
+                </button>
+              </a>
+              <br />
+              <a href="/registration">
+                <button className="btn-register">
+                  New User ? Register Now
+                </button>
+              </a>
+            </div>
+          </div>
+          <div className="col-md-6 form-pic"></div>
         </div>
       </main>
     );

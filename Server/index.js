@@ -15,7 +15,7 @@ app.use(express.json());
 
 //DB Connection
 mongoose.connect(
-  "mongodb://localhost:27017/register?readPreference=primary&appname=MongoDB%20Compass&ssl=false",
+  "mongodb+srv://osasha97:Halamadrid_12@register.tbize.mongodb.net/register?authSource=admin&replicaSet=atlas-1gj1qe-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true",
   {
     useNewUrlParser: true,
   }
